@@ -1,3 +1,14 @@
+:root {
+  --main-todo-color: #FFFF;
+  --button-text-color: #5051F9;
+  --error: red;
+  --main-bg-color: #d6e1fd;
+  --delete-hover: #EFF2FF;
+  --borders: #E7EBFB;
+  --button-color: #EDECFE;
+  --completed: #50C878;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +16,7 @@
 body {
   font-family: 'Comfortaa', cursive;
   margin: 0;
-  background-color: #d6e1fd;
+  background-color: var(--main-bg-color);
   font-weight: 400;
 }
 
@@ -19,9 +30,8 @@ body {
   padding: 45px;
 }
 
-
 .todo {
-  background: #FFFFFF;
+  background: var(--main-todo-color);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -29,9 +39,9 @@ body {
 }
 
 .todo__day {
-  background: #FBFAFF;
+  /* background: var(--main-todo-color); */
   border-radius: 10px 0 0 10px;
-  border-right: 1px solid #E7EBFB;
+  border-right: 1px solid var(--borders);
   font-size: 14px;
   line-height: 16px;
   padding: 20px 40px;
@@ -42,10 +52,16 @@ body {
   font-size: 16px;
   line-height: 18px;
   padding: 20px 25px;
+  width: 70%;
+  word-wrap: break-word;
+}
+
+.todo__checkbox {
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 .todo__delete {
-  margin-left: auto;
   margin-right: 10px;
   background: none;
   border: none;
@@ -55,12 +71,12 @@ body {
 }
 
 .todo__delete:hover {
-  background: #EFF2FF;
+  background: var(--delete-hover);
 }
 
 input {
-  background: #FFFFFF;
-  border: 1px solid #E7EBFB;
+  background: var(--main-todo-color);
+  border: 1px solid var(--borders);
   border-radius: 9px;
   padding: 12px 20px;
   font-family: 'Comfortaa', cursive;
@@ -75,7 +91,7 @@ input::placeholder {
 }
 
 input.error {
-  border: 1px solid red;
+  border: 1px solid var(--error);
 }
 
 .todo__form {
@@ -97,12 +113,12 @@ input.error {
 }
 
 .button {
-  background: #EDECFE;
+  background: var(--button-color);
   border-radius: 9px;
   border: none;
   font-size: 13px;
   line-height: 14px;
-  color: #5051F9;
+  color: var(--button-text-color);
   padding: 14px 30px;
   cursor: pointer;
 }
@@ -111,3 +127,6 @@ input.error {
   background: #dcdaff;
 }
 
+.finished__todo {
+  background: var(--completed);
+}
